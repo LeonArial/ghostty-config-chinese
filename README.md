@@ -3,28 +3,17 @@
   <h1 align="center">Ghostty Config</h1>
 </p>
 
-
 > [!NOTE]
-> This tool is still early in development and the list of features and future improvements is not complete--even the name is up for debate! Please give your feedback, ideas, and report bugs via the [github issue tracker](https://github.com/zerebos/ghostty-config/issues).
+> 本工具仍处于早期开发阶段，功能列表和未来改进尚不完整——甚至连名字都还有待商榷！请通过 [GitHub Issue](https://github.com/zerebos/ghostty-config/issues) 反馈您的意见、想法并报告 Bug。
 
-Ghostty config is a beautiful configuration generator for [Ghostty Terminal](https://github.com/ghostty-org). Features include easily modifiable settings, a font playground, and tons of previews and demos for cursors, selections, and even the color palette. More features are soon to come including keybind validation.
+Ghostty Config 是一个为 [Ghostty Terminal](https://github.com/ghostty-org) 打造的精美配置生成器。功能包括轻松修改设置、字体演练场，以及用于光标、选区甚至调色板的大量预览和演示。更多功能即将推出，包括快捷键验证。
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/aa49f2bb-a6d3-4248-833b-488d27b57815" alt="GUI Preview">
-</p>
-
-This is a web tool that is deployed automatically via GitHub actions on every push to `main` to ensure it stays up to date. You can view and share the latest version at this url: [ghostty.zerebos.com](https://ghostty.zerebos.com/). Since this is meant to be used in tandem with the desktop Ghostty terminal, it does not do well on mobile and there really is no plan for that. As for desktop, if there is enough demand for it, I may make an alternate version of the tool optimized for desktop available via [Wails](https://wails.io/)!
-
-
-
-## Star History
+> 🌏 **说明**：本项目前端界面已进行简体中文汉化，旨在方便中文用户使用。
 
 <p align="center">
-  <a href="https://star-history.com/#zerebos/ghostty-config&Date">
-   <picture>
-     <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=zerebos/ghostty-config&type=Date&theme=dark" />
-     <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=zerebos/ghostty-config&type=Date" />
-     <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=zerebos/ghostty-config&type=Date" />
-   </picture>
-  </a>
+  <img src="./src/lib/images/截图.png" alt="GUI Preview">
 </p>
+
+这是一个 Web 工具，每次推送到 `main` 分支时都会通过 GitHub Actions 自动部署，以确保保持最新状态。您可以通过此 URL 查看和分享最新版本：[ghostty.zerebos.com](https://ghostty.zerebos.com/)。
+
+由于本工具旨在与桌面版 Ghostty 终端配合使用，因此在移动设备上的体验不佳，且目前没有适配计划。至于桌面版，如果需求足够大，我可能会通过 [Wails](https://wails.io/) 制作一个针对桌面优化的替代版本！
