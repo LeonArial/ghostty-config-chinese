@@ -1,14 +1,17 @@
 <script lang="ts">
     import {page} from "$app/stores";
     import logo from "$lib/images/ghost.svg";
+    import {base} from "$app/paths";
 
     const {route = "/", name = "Ghostty Config", subtext = "社区工具"} = $props();
     const path = $derived($page.url.pathname);
 
-    const selected = $derived(path === route || path.startsWith("/app"));
+    const finalRoute = $derived(`${base}${route}`);
+
+    const selected = $derived(path === finalRoute || path.startsWith(`${base}/app`));
 </script>
 
-<a href={route} class="user-tab" class:selected>
+<a href={finalRoute} class="user-tab" class:selected>
     <div class="user-avatar">
         <img src={logo} alt="Ghostty Logo" />
     </div>

@@ -1,6 +1,7 @@
 <script lang="ts">
     import {page} from "$app/stores";
     import type {Snippet} from "svelte";
+    import {base} from "$app/paths";
 
 
     interface Props {
@@ -14,12 +15,13 @@
     const isExternal = route.startsWith("http");
     const target = isExternal ? "_blank" : "";
     const rel = isExternal ? "noopener noreferer" : "";
+    const finalRoute = $derived(isExternal ? route : `${base}${route}`);
 
-    const selected = $derived(path === route);
+    const selected = $derived(path === finalRoute);
 </script>
 
 
-<a href={route} class="nav-tab" class:selected {target} {rel}>
+<a href={finalRoute} class="nav-tab" class:selected {target} {rel}>
     <div class="tab-icon">{@render icon()}</div>
     <div class="tab-label">{@render children()}</div>
     {#if isExternal}

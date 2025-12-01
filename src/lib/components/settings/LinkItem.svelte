@@ -1,9 +1,11 @@
 <script lang="ts">
     // TODO: think of a way to elegantly de-duplicate this with the regular ITEM
+    import {base} from "$app/paths";
     const {name = "", note = "", href, icon}: {name?: string, note?: string, href: string, icon?: string} = $props();
+    const finalHref = $derived(href.startsWith("http") ? href : `${base}${href}`);
 </script>
 
-<a class="setting-item" {href}>
+<a class="setting-item" href={finalHref}>
     <div class="row">
         <div class="setting-name">
             {#if icon}<img src={icon} alt={`${name} Submenu`} />{/if}
