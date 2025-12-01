@@ -19,10 +19,12 @@ Ghostty Config 是一个为 [Ghostty Terminal](https://github.com/ghostty-org) �
 
 这是一个 Web 工具，旨在帮助用户更方便地配置 Ghostty 终端。
 
+**🚀 在线使用 (汉化版)**: [https://leonarial.github.io/ghostty-config-chinese/](https://leonarial.github.io/ghostty-config-chinese/)
+
 ### 原项目信息
 
-* **原项目仓库**: [zerebos/ghostty-config](https://github.com/zerebos/ghostty-config)
-* **在线演示 (英文原版)**: [ghostty.zerebos.com](https://ghostty.zerebos.com/)
+*   **原项目仓库**: [zerebos/ghostty-config](https://github.com/zerebos/ghostty-config)
+*   **在线演示 (英文原版)**: [ghostty.zerebos.com](https://ghostty.zerebos.com/)
 
 ### 本地运行
 
@@ -52,8 +54,4 @@ Ghostty Config 是一个为 [Ghostty Terminal](https://github.com/ghostty-org) �
      <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=zerebos/ghostty-config&type=Date" />
    </picture>
   </a>
-</p>
-<p align="center">
-  <a href="https://zerebos.github.io/ghostty-config"><img src="./src/lib/images/ghost.png" height="128" alt="Ghostty Config"></a>
-  <h1 align="center">Ghostty Config</h1>
 </p>
