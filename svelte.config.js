@@ -20,7 +20,7 @@ const config = {
             // The commented out part below is if I serve it under zerebos.github.io/<repo>
             // then the BASE_PATH would be set in the workflow to /<repo>
             // but for this project it is being aliased/served at a subdomain root
-            base: "" // process.argv.includes("dev") ? "" : process.env.BASE_PATH
+            base: process.argv.includes("dev") ? "" : process.env.BASE_PATH
         }
     }
 };
