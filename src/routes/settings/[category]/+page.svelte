@@ -1,5 +1,6 @@
 <script lang="ts">
     import Page from "$lib/views/Page.svelte";
+    import {base} from "$app/paths";
 
     import {page} from "$app/stores";
     import Switch from "$lib/components/settings/Switch.svelte";
@@ -29,7 +30,7 @@
 <Page {title}>
     {#if category}
         {#if category.id === "fonts"}
-            <Admonition size="1.5rem">字体预览已移动到<a href="/app/font-playground/">单独的页面</a>。</Admonition>
+            <Admonition size="1.5rem">字体预览已移动到<a href="{base}/app/font-playground/">单独的页面</a>。</Admonition>
         {:else if category.id === "colors"}
             <Admonition size="1.5rem">你可以通过右键单击将颜色重置为默认值！</Admonition>
         {/if}
