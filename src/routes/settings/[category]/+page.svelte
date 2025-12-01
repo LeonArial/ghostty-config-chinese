@@ -29,9 +29,9 @@
 <Page {title}>
     {#if category}
         {#if category.id === "fonts"}
-            <Admonition size="1.5rem">The font playground has moved to a <a href="/app/font-playground/">separate page</a>.</Admonition>
+            <Admonition size="1.5rem">字体预览已移动到<a href="/app/font-playground/">单独的页面</a>。</Admonition>
         {:else if category.id === "colors"}
-            <Admonition size="1.5rem">You can reset a color to its default value by right clicking!</Admonition>
+            <Admonition size="1.5rem">你可以通过右键单击将颜色重置为默认值！</Admonition>
         {/if}
         {#each category.groups as group (group.id)}
             <Group title={group.name} note={group.note}>
@@ -68,7 +68,7 @@
             </Group>
         {/each}
     {:else}
-        <h1>What Happened?</h1>
-        <p>You shouldn't be here! If you followed a link, please report the bug on GitHub. Otherwise, go ahead and start browsing on the left.</p>
+        <h1>发生什么事了？</h1>
+        <p>你不应该出现在这里！如果你是通过链接进来的，请在 GitHub 上报告此 Bug。否则，请点击左侧菜单开始浏览。</p>
     {/if}
 </Page>

@@ -81,33 +81,33 @@
             <Gap />
             <Tab route="/settings/application">
                 {#snippet icon()}<img src={application} alt="Application Settings" />{/snippet}
-                Application
+                应用
             </Tab>
             <Tab route="/settings/clipboard">
                 {#snippet icon()}<img src={clipboard} alt="Clipboard Settings" />{/snippet}
-                Clipboard
+                剪贴板
             </Tab>
             <Tab route="/settings/window">
                 {#snippet icon()}<img src={window} alt="Window Settings" />{/snippet}
-                Window
+                窗口
             </Tab>
             <Gap />
             <Tab route="/settings/colors">
                 {#snippet icon()}<img src={colors} alt="Color Settings" />{/snippet}
-                Colors
+                颜色
             </Tab>
             <Tab route="/settings/fonts">
                 {#snippet icon()}<img src={fonts} alt="Font Settings" />{/snippet}
-                Fonts
+                字体
             </Tab>
             <Gap />
             <Tab route="/settings/keybinds">
                 {#snippet icon()}<img src={keybinds} alt="Keybind Settings" />{/snippet}
-                Keybinds
+                快捷键
             </Tab>
             <Tab route="/settings/mouse">
                 {#snippet icon()}<img src={mouse} alt="Mouse Settings" />{/snippet}
-                Mouse
+                鼠标
             </Tab>
             <Gap />
             <Tab route="/settings/gtk">

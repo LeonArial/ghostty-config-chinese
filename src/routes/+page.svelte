@@ -17,51 +17,50 @@
             </div>
             <div class="user-label">
                 <div class="user-name">Ghostty Config<sup>β</sup></div>
-                <div class="user-subtext">Community Tool</div>
+                <div class="user-subtext">社区工具</div>
             </div>
         </div>
         <Admonition>
-            This tool is still in a beta stage so there <em>will</em> be bugs! If you run into any,
-            please report them
+            本工具仍处于 Beta 阶段，肯定会有 Bug！如果遇到问题，请在 GitHub 上
             <a
                 href="https://github.com/zerebos/ghostty-config/issues"
                 target="_blank"
-                rel="noopener noreferrer">on GitHub</a
-            >.
+                rel="noopener noreferrer">报告</a>
+            。
         </Admonition>
         <Group>
-            <LinkItem name="Import & Export" href="/app/import-export" icon={sync} />
+            <LinkItem name="导入 & 导出" href="/app/import-export" icon={sync} />
             <Separator />
-            <LinkItem name="Font Playground" href="/app/font-playground" icon={fonts} />
+            <LinkItem name="字体预览" href="/app/font-playground" icon={fonts} />
         </Group>
-        <Group title="Changelog v0.1.1">
+        <Group title="更新日志 v0.1.1">
             <ul>
                 <li>
-                    Added missing config options added in Ghostty (like macOS icon customization).
+                    添加了 Ghostty 中新增的配置选项（如 macOS 图标自定义）。
                 </li>
-                <li>Updated certain defaults to correctly match Ghostty's updated defaults.</li>
-                <li>Slightly rearranged settings for better organization.</li>
-                <li>Reworded from "unofficial tool" to "community tool".</li>
+                <li>更新了部分默认值以匹配 Ghostty 的最新默认值。</li>
+                <li>调整了部分设置的顺序以优化结构。</li>
+                <li>将描述从“非官方工具”改为“社区工具”。</li>
             </ul>
         </Group>
         <div class="group-wrapper">
-            <Group title="Roadmap" flex={1}>
+            <Group title="路线图" flex={1}>
                 <ul>
-                    <li>Validation of keybindings</li>
-                    <li>Help documentation</li>
-                    <li>Allow manual color input</li>
-                    <li>Unit testing import/export</li>
-                    <li>Unify color scheme</li>
-                    <li>Refactor & cleanup code</li>
-                    <li>macOS icon preview</li>
+                    <li>快捷键验证</li>
+                    <li>帮助文档</li>
+                    <li>允许手动输入颜色值</li>
+                    <li>导入/导出的单元测试</li>
+                    <li>统一配色方案</li>
+                    <li>重构与代码清理</li>
+                    <li>macOS 图标预览</li>
                 </ul>
             </Group>
-            <Group title="Potential Ideas">
+            <Group title="潜在想法">
                 <ul>
-                    <li>Custom setting types to more closely match Ghostty's config</li>
-                    <li>Add a way to reset individual settings</li>
-                    <li>Change color picker from modal to popout</li>
-                    <li>A detailed terminal preview and playground</li>
+                    <li>自定义设置类型以更贴近 Ghostty 配置</li>
+                    <li>添加重置单个设置的功能</li>
+                    <li>将颜色选择器从模态框改为弹出式</li>
+                    <li>详细的终端预览与演练场</li>
                 </ul>
             </Group>
         </div>

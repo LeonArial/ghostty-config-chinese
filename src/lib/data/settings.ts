@@ -126,7 +126,7 @@ fetchThemeFiles().then((themeFiles: ThemeResponse[] | null) => {
 const settings = [
     {
         id: "application",
-        name: "Application",
+        name: "应用",
         note: "",
         groups: [
             {
@@ -134,155 +134,155 @@ const settings = [
                 name: "",
                 // type: "group",
                 settings: [
-                    {id: "title", name: "Static title for all windows", type: "text", value: ""},
-                    {id: "desktopNotifications", name: "Allow desktop notifications", type: "switch", value: true},
-                    {id: "configFile", name: "Additional config file", type: "text", value: ""},
-                    {id: "configDefaultFiles", name: "Load default config file", type: "switch", value: true},
-                    {id: "linkUrl", name: "Automatically link URLs", note: "Matching occurs while holding the control (Linux) or command (macOS) key.", type: "switch", value: true},
+                    {id: "title", name: "所有窗口的静态标题", type: "text", value: ""},
+                    {id: "desktopNotifications", name: "允许桌面通知", type: "switch", value: true},
+                    {id: "configFile", name: "额外配置文件", type: "text", value: ""},
+                    {id: "configDefaultFiles", name: "加载默认配置文件", type: "switch", value: true},
+                    {id: "linkUrl", name: "自动链接 URL", note: "按住 Control (Linux) 或 Command (macOS) 键时匹配。", type: "switch", value: true},
                 ]
             },
             {
                 id: "startup",
-                name: "Startup",
+                name: "启动",
                 // type: "group",
                 settings: [
-                    {id: "command", name: "Command to run on launch", type: "text", value: ""},
-                    {id: "initialCommand", name: "Command to run on first launch", note: "Unlike the previous setting, this will only run once in the lifetime of the app.", type: "text", value: ""},
-                    {id: "env", name: "Environment variables", type: "text", value: ""},
-                    {id: "maximize", name: "Launch as maximized window", type: "switch", value: false},
-                    {id: "fullscreen", name: "Launch in fullscreen mode", type: "switch", value: false},
-                    {id: "initialWindow", name: "Show a window on startup", type: "switch", value: true},
-                    {id: "workingDirectory", name: "Directory to use after startup", note: "Special values of `home` and `inherit` are also allowed here.", type: "text", value: ""},
+                    {id: "command", name: "启动时运行的命令", type: "text", value: ""},
+                    {id: "initialCommand", name: "首次启动时运行的命令", note: "与上一个设置不同，此命令在应用生命周期内仅运行一次。", type: "text", value: ""},
+                    {id: "env", name: "环境变量", type: "text", value: ""},
+                    {id: "maximize", name: "启动时最大化窗口", type: "switch", value: false},
+                    {id: "fullscreen", name: "启动时全屏", type: "switch", value: false},
+                    {id: "initialWindow", name: "启动时显示窗口", type: "switch", value: true},
+                    {id: "workingDirectory", name: "启动后使用的目录", note: "此处也允许使用 `home` 和 `inherit` 特殊值。", type: "text", value: ""},
                 ]
             },
             {
                 id: "shutdown",
-                name: "Shutdown",
+                name: "关闭",
                 // type: "group",
                 settings: [
-                    {id: "waitAfterCommand", name: "Wait for input after command", type: "switch", value: false},
-                    {id: "abnormalCommandExitRuntime", name: "Abnormal command exit runtime", type: "number", value: 250, min: 0, size: 5},
-                    {id: "confirmCloseSurface", name: "Confirm when closing a surface", type: "switch", value: true},
-                    {id: "quitAfterLastWindowClosed", name: "Quit after closing last window", type: "switch", value: false},
-                    {id: "quitAfterLastWindowClosedDelay", name: "Delay before auto quitting", type: "text", value: ""},
+                    {id: "waitAfterCommand", name: "命令结束后等待输入", type: "switch", value: false},
+                    {id: "abnormalCommandExitRuntime", name: "异常命令退出运行时间", type: "number", value: 250, min: 0, size: 5},
+                    {id: "confirmCloseSurface", name: "关闭界面时确认", type: "switch", value: true},
+                    {id: "quitAfterLastWindowClosed", name: "关闭最后一个窗口后退出", type: "switch", value: false},
+                    {id: "quitAfterLastWindowClosedDelay", name: "自动退出前的延迟", type: "text", value: ""},
                 ]
             },
             {
                 id: "shell",
-                name: "Shell Integration",
+                name: "Shell 集成",
                 // type: "group",
                 settings: [
-                    {id: "shellIntegration", name: "Shell integration style", type: "dropdown", value: "detect", options: ["none", "detect", "bash", "elvish", "fish", "zsh"]},
-                    {id: "shellIntegrationFeatures", name: "Shell integration features", note: "The current available features are cursor, sudo, and title. Including one force enables it, prefixing it with `no-` force disables it, omitting it falls back to default.", type: "text", value: "cursor,no-sudo,title"},
-                    {id: "term", name: "TERM environment variable", type: "text", value: "xterm-ghostty"},
-                    {id: "titleReport", name: "CSI 21 title reporting", note: "This allows running apps to read the terminal title.", type: "switch", value: true},
+                    {id: "shellIntegration", name: "Shell 集成风格", type: "dropdown", value: "detect", options: ["none", "detect", "bash", "elvish", "fish", "zsh"]},
+                    {id: "shellIntegrationFeatures", name: "Shell 集成功能", note: "当前可用功能包括 cursor, sudo, 和 title。包含某项则强制启用，前缀 `no-` 则强制禁用，省略则使用默认值。", type: "text", value: "cursor,no-sudo,title"},
+                    {id: "term", name: "TERM 环境变量", type: "text", value: "xterm-ghostty"},
+                    {id: "titleReport", name: "CSI 21 标题报告", note: "允许运行的应用读取终端标题。", type: "switch", value: true},
                 ]
             },
             {
                 id: "quick",
-                name: "Quick Terminal",
+                name: "快捷终端",
                 settings: [
-                    {id: "quickTerminalPosition", name: "Terminal position", type: "dropdown", value: "top", options: ["top", "right", "bottom", "left", "center"]},
-                    {id: "quickTerminalScreen", name: "Screen location", type: "dropdown", value: "main", options: ["main", "mouse", "macos-menu-bar"]},
-                    {id: "quickTerminalAnimationDuration", name: "Animation duration", type: "number", value: 0.2, min: 0, max: 10, step: 0.1, range: true},
-                    {id: "quickTerminalAutohide", name: "Autohide", note: "This autohides the quick terminal when focus shifts away.", type: "switch", value: true},
-                    {id: "quickTerminalSpaceBehavior", name: "macOS space behavior", type: "dropdown", value: "move", options: ["move", "remain"]},
+                    {id: "quickTerminalPosition", name: "终端位置", type: "dropdown", value: "top", options: ["top", "right", "bottom", "left", "center"]},
+                    {id: "quickTerminalScreen", name: "屏幕位置", type: "dropdown", value: "main", options: ["main", "mouse", "macos-menu-bar"]},
+                    {id: "quickTerminalAnimationDuration", name: "动画持续时间", type: "number", value: 0.2, min: 0, max: 10, step: 0.1, range: true},
+                    {id: "quickTerminalAutohide", name: "自动隐藏", note: "当焦点移开时自动隐藏快捷终端。", type: "switch", value: true},
+                    {id: "quickTerminalSpaceBehavior", name: "macOS 空间行为", type: "dropdown", value: "move", options: ["move", "remain"]},
                 ]
             },
             {
                 id: "advanced",
-                name: "Advanced",
-                note: "You should only touch these settings if you know what you're doing, otherwise you could cause major issues with Ghostty!",
+                name: "高级",
+                note: "除非你知道自己在做什么，否则请勿修改这些设置，否则可能会导致 Ghostty 出现重大问题！",
                 // type: "group",
                 settings: [
-                    {id: "scrollbackLimit", name: "Scrollback buffer size (bytes)", note: "This buffer exists completely in memory but is allocated lazily.", type: "number", value: 10000000, min: 0, size: 10},
-                    {id: "customShader", name: "Custom shader", note: "This matches the API of Shadertoy.", type: "text", value: ""},
-                    {id: "customShaderAnimation", name: "Allow shaders to animate", type: "dropdown", value: "false", options: ["false", "true", "always"]},
-                    {id: "enquiryResponse", name: "Reponse to ENQ", type: "text", value: ""},
-                    {id: "oscColorReportFormat", name: "OSC color report format", type: "dropdown", value: "16-bit", options: ["none", "8-bit", "16-bit"]},
-                    {id: "vtKamAllowed", name: "VT kam mode allowed", note: "If you don't know what this is, don't touch it!", type: "switch", value: false},
-                    {id: "imageStorageLimit", name: "Image buffer limit (bytes)", type: "number", value: 320000000, min: 0, max: 4294967295, size: 12},
+                    {id: "scrollbackLimit", name: "回滚缓冲区大小 (字节)", note: "该缓冲区完全存在于内存中，但按需分配。", type: "number", value: 10000000, min: 0, size: 10},
+                    {id: "customShader", name: "自定义着色器", note: "符合 Shadertoy API。", type: "text", value: ""},
+                    {id: "customShaderAnimation", name: "允许着色器动画", type: "dropdown", value: "false", options: ["false", "true", "always"]},
+                    {id: "enquiryResponse", name: "ENQ 响应", type: "text", value: ""},
+                    {id: "oscColorReportFormat", name: "OSC 颜色报告格式", type: "dropdown", value: "16-bit", options: ["none", "8-bit", "16-bit"]},
+                    {id: "vtKamAllowed", name: "允许 VT kam 模式", note: "如果你不知道这是什么，请不要乱动！", type: "switch", value: false},
+                    {id: "imageStorageLimit", name: "图片缓冲区限制 (字节)", type: "number", value: 320000000, min: 0, max: 4294967295, size: 12},
                 ]
             },
         ]
     },
     {
         id: "clipboard",
-        name: "Clipboard",
+        name: "剪贴板",
         groups: [
             {
                 id: "main",
                 name: "",
                 settings: [
-                    {id: "clipboardRead", name: "Allow terminal to read clipboard", type: "dropdown", value: "ask", options: ["ask", "allow", "deny"]},
-                    {id: "clipboardWrite", name: "Allow terminal to write clipboard", type: "dropdown", value: "ask", options: ["ask", "allow", "deny"]},
-                    {id: "copyOnSelect", name: "Copy on select", type: "dropdown", value: true, options: ["true", "false", "clipboard"]},
-                    {id: "clipboardTrimTrailingSpaces", name: "Trim trailing space on copy", type: "switch", value: true},
-                    {id: "clipboardPasteProtection", name: "Confirm when pasting unsafely", type: "switch", value: true},
-                    {id: "clipboardPasteBracketedSafe", name: "Mark bracketed paste as safe", type: "switch", value: true},
+                    {id: "clipboardRead", name: "允许终端读取剪贴板", type: "dropdown", value: "ask", options: ["ask", "allow", "deny"]},
+                    {id: "clipboardWrite", name: "允许终端写入剪贴板", type: "dropdown", value: "ask", options: ["ask", "allow", "deny"]},
+                    {id: "copyOnSelect", name: "选中即复制", type: "dropdown", value: true, options: ["true", "false", "clipboard"]},
+                    {id: "clipboardTrimTrailingSpaces", name: "复制时去除尾部空格", type: "switch", value: true},
+                    {id: "clipboardPasteProtection", name: "不安全粘贴时确认", type: "switch", value: true},
+                    {id: "clipboardPasteBracketedSafe", name: "将括号粘贴标记为安全", type: "switch", value: true},
                 ]
             }
         ]
     },
     {
         id: "window",
-        name: "Window",
+        name: "窗口",
         groups: [
             {
                 id: "main",
                 name: "",
                 settings: [
-                    {id: "windowTitleFontFamily", name: "Window title font", type: "text", value: ""},
-                    {id: "windowSubtitle", name: "Window subtitle", type: "dropdown", value: "false", options: ["false", "working-directory"]},
-                    {id: "windowVsync", name: "Enable vsync", type: "switch", value: true},
-                    {id: "windowInheritWorkingDirectory", name: "Inherit working directory", type: "switch", value: true},
-                    {id: "windowInheritFontSize", name: "Inherit font size", type: "switch", value: true},
-                    {id: "windowColorspace", name: "Window colorspace", type: "dropdown", value: "srgb", options: ["srgb", "display-p3"]},
-                    {id: "windowSaveState", name: "Save window state", type: "dropdown", value: "default", options: ["default", "never", "always"]},
+                    {id: "windowTitleFontFamily", name: "窗口标题字体", type: "text", value: ""},
+                    {id: "windowSubtitle", name: "窗口副标题", type: "dropdown", value: "false", options: ["false", "working-directory"]},
+                    {id: "windowVsync", name: "启用垂直同步", type: "switch", value: true},
+                    {id: "windowInheritWorkingDirectory", name: "继承工作目录", type: "switch", value: true},
+                    {id: "windowInheritFontSize", name: "继承字体大小", type: "switch", value: true},
+                    {id: "windowColorspace", name: "窗口色彩空间", type: "dropdown", value: "srgb", options: ["srgb", "display-p3"]},
+                    {id: "windowSaveState", name: "保存窗口状态", type: "dropdown", value: "default", options: ["default", "never", "always"]},
                     // maybe move to application?
-                    {id: "windowNewTabPosition", name: "New tab position", type: "dropdown", value: "current", options: ["current", "end"]},
+                    {id: "windowNewTabPosition", name: "新标签页位置", type: "dropdown", value: "current", options: ["current", "end"]},
                 ]
             },
             {
                 id: "appearance",
-                name: "Appearance",
+                name: "外观",
                 settings: [
-                    {id: "windowTheme", name: "Window theme", type: "dropdown", value: "auto", options: ["auto", "system", "light", "dark"]},
-                    {id: "windowDecoration", name: "Window decorations", type: "dropdown", value: "auto", options: ["auto", "none", "client", "server"]},
-                    {id: "windowPaddingX", name: "Horizontal window padding", type: "text", value: "2"},
-                    {id: "windowPaddingY", name: "Vertical window padding", type: "text", value: "2"},
-                    {id: "windowPaddingBalance", name: "Auto-balance window padding", type: "switch", value: false},
-                    {id: "windowPaddingColor", name: "Window padding color", type: "dropdown", value: "background", options: ["background", "extend", "extend-always"]},
+                    {id: "windowTheme", name: "窗口主题", type: "dropdown", value: "auto", options: ["auto", "system", "light", "dark"]},
+                    {id: "windowDecoration", name: "窗口装饰", type: "dropdown", value: "auto", options: ["auto", "none", "client", "server"]},
+                    {id: "windowPaddingX", name: "窗口水平内边距", type: "text", value: "2"},
+                    {id: "windowPaddingY", name: "窗口垂直内边距", type: "text", value: "2"},
+                    {id: "windowPaddingBalance", name: "自动平衡窗口内边距", type: "switch", value: false},
+                    {id: "windowPaddingColor", name: "窗口内边距颜色", type: "dropdown", value: "background", options: ["background", "extend", "extend-always"]},
 
                     // maybe move to colors
-                    {id: "windowTitlebarBackground", name: "Titlebar background", type: "color", value: ""},
-                    {id: "windowTitlebarForeground", name: "Titlebar foreground", type: "color", value: ""},
-                    {id: "backgroundOpacity", name: "Background opacity", type: "number", range: true, value: 1, min: 0, max: 1, step: 0.01},
-                    {id: "backgroundBlur", name: "Background blur radius", note: "A value of 20 is reasonable for a good looking blur, going beyond that can cause rendering and performance issues.", type: "number", range: true, value: 0, min: 0, max: 50, step: 1},
-                    {id: "unfocusedSplitOpacity", name: "Unfocused split opacity", type: "number", range: true, value: 0.7, min: 0.15, max: 1, step: 0.01},
-                    {id: "unfocusedSplitFill", name: "Unfocused split fill color", type: "color", value: ""},
-                    {id: "splitDividerColor", name: "Split divider color", type: "color", value: ""},
+                    {id: "windowTitlebarBackground", name: "标题栏背景", type: "color", value: ""},
+                    {id: "windowTitlebarForeground", name: "标题栏前景", type: "color", value: ""},
+                    {id: "backgroundOpacity", name: "背景不透明度", type: "number", range: true, value: 1, min: 0, max: 1, step: 0.01},
+                    {id: "backgroundBlur", name: "背景模糊半径", note: "值为 20 时模糊效果较好，超过该值可能导致渲染和性能问题。", type: "number", range: true, value: 0, min: 0, max: 50, step: 1},
+                    {id: "unfocusedSplitOpacity", name: "失焦分割窗格不透明度", type: "number", range: true, value: 0.7, min: 0.15, max: 1, step: 0.01},
+                    {id: "unfocusedSplitFill", name: "失焦分割窗格填充色", type: "color", value: ""},
+                    {id: "splitDividerColor", name: "分割线颜色", type: "color", value: ""},
                 ]
             },
             {
                 id: "resize",
-                name: "Sizing & Resizing",
+                name: "尺寸与调整",
                 settings: [
-                    {id: "windowHeight", name: "Initial window height", note: "This size is not in pixels but in number of terminal grid cells", type: "number", value: 0, min: 4, step: 1, size: 4},
-                    {id: "windowWidth", name: "Initial window width", note: "This size is not in pixels but in number of terminal grid cells", type: "number", value: 0, min: 10, step: 1, size: 4},
-                    {id: "windowY", name: "Initial window Y", note: "Relative to the top left pixel of the screen", type: "number", value: 0, min: 0, step: 1, size: 4},
-                    {id: "windowX", name: "Initial window X", note: "Relative to the top left pixel of the screen", type: "number", value: 0, min: 0, step: 1, size: 4},
-                    {id: "windowStepResize", name: "Resize in grid cell increments", type: "switch", value: false},
-                    {id: "resizeOverlay", name: "Show resize overlays", type: "dropdown", value: "after-first", options: ["always", "never", "after-first"]},
-                    {id: "resizeOverlayPosition", name: "Resize overlay position", type: "dropdown", value: "center", options: ["center", "top-left", "top-center", "top-right", "bottom-left", "bottom-center", "bottom-right"]},
-                    {id: "resizeOverlayDuration", name: "Show resize overlay time", type: "text", value: "750ms"},
+                    {id: "windowHeight", name: "初始窗口高度", note: "此尺寸并非像素值，而是终端网格单元数", type: "number", value: 0, min: 4, step: 1, size: 4},
+                    {id: "windowWidth", name: "初始窗口宽度", note: "此尺寸并非像素值，而是终端网格单元数", type: "number", value: 0, min: 10, step: 1, size: 4},
+                    {id: "windowY", name: "初始窗口 Y 坐标", note: "相对于屏幕左上角像素", type: "number", value: 0, min: 0, step: 1, size: 4},
+                    {id: "windowX", name: "初始窗口 X 坐标", note: "相对于屏幕左上角像素", type: "number", value: 0, min: 0, step: 1, size: 4},
+                    {id: "windowStepResize", name: "按网格单元增量调整大小", type: "switch", value: false},
+                    {id: "resizeOverlay", name: "显示调整大小覆盖层", type: "dropdown", value: "after-first", options: ["always", "never", "after-first"]},
+                    {id: "resizeOverlayPosition", name: "调整大小覆盖层位置", type: "dropdown", value: "center", options: ["center", "top-left", "top-center", "top-right", "bottom-left", "bottom-center", "bottom-right"]},
+                    {id: "resizeOverlayDuration", name: "显示调整大小覆盖层时间", type: "text", value: "750ms"},
                 ]
             },
         ]
     },
     {
         id: "colors",
-        name: "Colors",
+        name: "颜色",
         groups: [
             {
                 id: "general",
@@ -290,45 +290,45 @@ const settings = [
                 settings: [
                     {
                         id: "theme",
-                        name: "Color theme",
-                        note: "Any colors selected after setting this will overwrite the theme's colors.",
+                        name: "颜色主题",
+                        note: "在此之后选择的任何颜色都将覆盖主题颜色。",
                         type: "theme",
                         value: "",
                         options: [{name: "Custom", value: ""}]
                     },
-                    {id: "boldIsBright", name: "Bold text uses bright colors", type: "switch", value: false},
-                    {id: "minimumContrast", name: "Minimum contrast", type: "number", value: 1, range: true, min: 1, max: 21, step: 0.1},
+                    {id: "boldIsBright", name: "粗体文本使用亮色", type: "switch", value: false},
+                    {id: "minimumContrast", name: "最小对比度", type: "number", value: 1, range: true, min: 1, max: 21, step: 0.1},
                 ]
             },
             {
                 id: "base",
-                name: "Base Colors",
-                note: "The preview here shows selected text in the second line of the command output.",
+                name: "基础颜色",
+                note: "此处预览显示命令输出第二行中的选定文本。",
                 settings: [
-                    {id: "background", name: "Background color", type: "color", value: "#282c34"},
-                    {id: "foreground", name: "Foreground color", type: "color", value: "#ffffff"},
-                    {id: "selectionBackground", name: "Selection background color", type: "color", value: ""},
-                    {id: "selectionForeground", name: "Selection foreground color", type: "color", value: ""},
-                    {id: "selectionInvertFgBg", name: "Invert selection colors", note: "Enabling this will cause selections to be the inverse of their current colors. This ignores the two selection colors above.", type: "switch", value: false},
+                    {id: "background", name: "背景颜色", type: "color", value: "#282c34"},
+                    {id: "foreground", name: "前景颜色", type: "color", value: "#ffffff"},
+                    {id: "selectionBackground", name: "选中背景颜色", type: "color", value: ""},
+                    {id: "selectionForeground", name: "选中前景颜色", type: "color", value: ""},
+                    {id: "selectionInvertFgBg", name: "反转选中颜色", note: "启用此选项将导致选中区域颜色反转。这将忽略上面的两个选中颜色设置。", type: "switch", value: false},
                 ]
             },
             {
                 id: "cursor",
-                name: "Cursor",
-                note: "The cursor in this preview blinks on and off at 1 second intervals for emphasis, it may not match what you see in Ghostty!",
+                name: "光标",
+                note: "此预览中的光标每 1 秒闪烁一次以示强调，可能与 Ghostty 中的实际效果不符！",
                 settings: [
-                    {id: "cursorColor", name: "Cursor color", type: "color", value: ""},
-                    {id: "cursorText", name: "Text color under cursor", type: "color", value: ""},
-                    {id: "cursorInvertFgBg", name: "Invert cursor cell colors", note: "Enabling this will cause cells under the cursor to be the inverse of their current colors. This ignores the two cursor colors above.", type: "switch", value: false},
-                    {id: "cursorOpacity", name: "Cursor opacity", type: "number", value: 1, range: true, min: 0, max: 1, step: 0.05},
-                    {id: "cursorStyle", name: "Cursor style", type: "dropdown", value: "block", options: ["block", "bar", "underline", {value: "block_hollow", name: "hollow block"}]},
-                    {id: "cursorStyleBlink", name: "Cursor blink style", note: "The `default` option defers to DEC mode 12 to determine blinking state.", type: "dropdown", value: "", options: ["true", "false", {value: "", name: "default"}]},
+                    {id: "cursorColor", name: "光标颜色", type: "color", value: ""},
+                    {id: "cursorText", name: "光标下文本颜色", type: "color", value: ""},
+                    {id: "cursorInvertFgBg", name: "反转光标单元格颜色", note: "启用此选项将导致光标下的单元格颜色反转。这将忽略上面的两个光标颜色设置。", type: "switch", value: false},
+                    {id: "cursorOpacity", name: "光标不透明度", type: "number", value: 1, range: true, min: 0, max: 1, step: 0.05},
+                    {id: "cursorStyle", name: "光标样式", type: "dropdown", value: "block", options: ["block", "bar", "underline", {value: "block_hollow", name: "hollow block"}]},
+                    {id: "cursorStyleBlink", name: "光标闪烁样式", note: "`default` 选项将根据 DEC 模式 12 决定闪烁状态。", type: "dropdown", value: "", options: ["true", "false", {value: "", name: "default"}]},
                 ]
             },
             {
                 id: "palette",
-                name: "Color Palette",
-                note: "The first 16 colors are the most commonly displayed colors in the terminal.\n\nColors 1-8 are typically black, red, green, yellow, blue, magenta, cyan, and white.\nColors 9-16 are typically \"brighter\" variants of these colors.",
+                name: "调色板",
+                note: "前 16 种颜色是终端中最常用的颜色。\n\n颜色 1-8 通常是黑、红、绿、黄、蓝、品红、青和白。\n颜色 9-16 通常是这些颜色的“较亮”变体。",
                 settings: [
                     {id: "palette", name: "", type: "palette", value: ["#1d1f21", "#cc6666", "#b5bd68", "#f0c674", "#81a2be", "#b294bb", "#8abeb7", "#c5c8c6", "#666666", "#d54e53", "#b9ca4a", "#e7c547", "#7aa6da", "#c397d8", "#70c0b1", "#eaeaea", "#000000", "#00005f", "#000087", "#0000af", "#0000d7", "#0000ff", "#005f00", "#005f5f", "#005f87", "#005faf", "#005fd7", "#005fff", "#008700", "#00875f", "#008787", "#0087af", "#0087d7", "#0087ff", "#00af00", "#00af5f", "#00af87", "#00afaf", "#00afd7", "#00afff", "#00d700", "#00d75f", "#00d787", "#00d7af", "#00d7d7", "#00d7ff", "#00ff00", "#00ff5f", "#00ff87", "#00ffaf", "#00ffd7", "#00ffff", "#5f0000", "#5f005f", "#5f0087", "#5f00af", "#5f00d7", "#5f00ff", "#5f5f00", "#5f5f5f", "#5f5f87", "#5f5faf", "#5f5fd7", "#5f5fff", "#5f8700", "#5f875f", "#5f8787", "#5f87af", "#5f87d7", "#5f87ff", "#5faf00", "#5faf5f", "#5faf87", "#5fafaf", "#5fafd7", "#5fafff", "#5fd700", "#5fd75f", "#5fd787", "#5fd7af", "#5fd7d7", "#5fd7ff", "#5fff00", "#5fff5f", "#5fff87", "#5fffaf", "#5fffd7", "#5fffff", "#870000", "#87005f", "#870087", "#8700af", "#8700d7", "#8700ff", "#875f00", "#875f5f", "#875f87", "#875faf", "#875fd7", "#875fff", "#878700", "#87875f", "#878787", "#8787af", "#8787d7", "#8787ff", "#87af00", "#87af5f", "#87af87", "#87afaf", "#87afd7", "#87afff", "#87d700", "#87d75f", "#87d787", "#87d7af", "#87d7d7", "#87d7ff", "#87ff00", "#87ff5f", "#87ff87", "#87ffaf", "#87ffd7", "#87ffff", "#af0000", "#af005f", "#af0087", "#af00af", "#af00d7", "#af00ff", "#af5f00", "#af5f5f", "#af5f87", "#af5faf", "#af5fd7", "#af5fff", "#af8700", "#af875f", "#af8787", "#af87af", "#af87d7", "#af87ff", "#afaf00", "#afaf5f", "#afaf87", "#afafaf", "#afafd7", "#afafff", "#afd700", "#afd75f", "#afd787", "#afd7af", "#afd7d7", "#afd7ff", "#afff00", "#afff5f", "#afff87", "#afffaf", "#afffd7", "#afffff", "#d70000", "#d7005f", "#d70087", "#d700af", "#d700d7", "#d700ff", "#d75f00", "#d75f5f", "#d75f87", "#d75faf", "#d75fd7", "#d75fff", "#d78700", "#d7875f", "#d78787", "#d787af", "#d787d7", "#d787ff", "#d7af00", "#d7af5f", "#d7af87", "#d7afaf", "#d7afd7", "#d7afff", "#d7d700", "#d7d75f", "#d7d787", "#d7d7af", "#d7d7d7", "#d7d7ff", "#d7ff00", "#d7ff5f", "#d7ff87", "#d7ffaf", "#d7ffd7", "#d7ffff", "#ff0000", "#ff005f", "#ff0087", "#ff00af", "#ff00d7", "#ff00ff", "#ff5f00", "#ff5f5f", "#ff5f87", "#ff5faf", "#ff5fd7", "#ff5fff", "#ff8700", "#ff875f", "#ff8787", "#ff87af", "#ff87d7", "#ff87ff", "#ffaf00", "#ffaf5f", "#ffaf87", "#ffafaf", "#ffafd7", "#ffafff", "#ffd700", "#ffd75f", "#ffd787", "#ffd7af", "#ffd7d7", "#ffd7ff", "#ffff00", "#ffff5f", "#ffff87", "#ffffaf", "#ffffd7", "#ffffff", "#080808", "#121212", "#1c1c1c", "#262626", "#303030", "#3a3a3a", "#444444", "#4e4e4e", "#585858", "#626262", "#6c6c6c", "#767676", "#808080", "#8a8a8a", "#949494", "#9e9e9e", "#a8a8a8", "#b2b2b2", "#bcbcbc", "#c6c6c6", "#d0d0d0", "#dadada", "#e4e4e4", "#eeeeee"]},
                 ]
@@ -337,72 +337,72 @@ const settings = [
     },
     {
         id: "fonts",
-        name: "Fonts",
+        name: "字体",
         groups: [
             {
                 id: "general",
-                name: "General Font Settings",
+                name: "通用字体设置",
                 settings: [
-                    {id: "fontSize", name: "Base font size", type: "number", value: 13, min: 4, max: 60, step: 0.5, range: true},
-                    {id: "fontThicken", name: "Thicken fonts", type: "switch", note: "This currently only affects macOS.", value: false},
-                    {id: "fontThickenStrength", name: "Thicken strength", type: "number", value: 255, min: 0, max: 255, step: 1, range: true},
-                    {id: "fontFeature", name: "Font ligature settings", type: "text", value: ""},
-                    {id: "fontSyntheticStyle", name: "Synthetic styles", note: "See the docs for more info.", type: "text", value: "bold,italic,bold-italic"},
-                    {id: "alphaBlending", name: "Alpha blending colorspace", type: "dropdown", value: "native", options: ["native", "linear", "linear-corrected"]},
+                    {id: "fontSize", name: "基础字体大小", type: "number", value: 13, min: 4, max: 60, step: 0.5, range: true},
+                    {id: "fontThicken", name: "加粗字体", type: "switch", note: "目前仅影响 macOS。", value: false},
+                    {id: "fontThickenStrength", name: "加粗强度", type: "number", value: 255, min: 0, max: 255, step: 1, range: true},
+                    {id: "fontFeature", name: "连字设置", type: "text", value: ""},
+                    {id: "fontSyntheticStyle", name: "合成样式", note: "查看文档了解更多信息。", type: "text", value: "bold,italic,bold-italic"},
+                    {id: "alphaBlending", name: "Alpha 混合色彩空间", type: "dropdown", value: "native", options: ["native", "linear", "linear-corrected"]},
                 ]
             },
             {
                 id: "family",
-                name: "Font Families",
+                name: "字体族",
                 settings: [
-                    {id: "fontFamily", name: "Main font family", type: "text", value: ""},
-                    {id: "fontFamilyBold", name: "Font family for bold text", type: "text", value: ""},
-                    {id: "fontFamilyItalic", name: "Font family for italic text", type: "text", value: ""},
-                    {id: "fontFamilyBoldItalic", name: "Font family for bold italic text", type: "text", value: ""},
-                    {id: "fontCodepointMap", name: "Unicode-specifc font mapping", note: "", type: "text", value: ""},
+                    {id: "fontFamily", name: "主要字体族", type: "text", value: ""},
+                    {id: "fontFamilyBold", name: "粗体字族", type: "text", value: ""},
+                    {id: "fontFamilyItalic", name: "斜体字族", type: "text", value: ""},
+                    {id: "fontFamilyBoldItalic", name: "粗斜体字族", type: "text", value: ""},
+                    {id: "fontCodepointMap", name: "特定 Unicode 字体映射", note: "", type: "text", value: ""},
                 ]
             },
             {
                 id: "styles",
-                name: "Font Styles",
-                note: "Named font styles for the fields above. For example for `Ioveska Heavy` you would use a style of `Heavy`. Alternately you can set the style to `false` to completely disable the style and revert to default style.",
+                name: "字体样式",
+                note: "上述字段的命名样式。例如 `Ioveska Heavy` 对应的样式为 `Heavy`。或者可以设置为 `false` 以完全禁用该样式并恢复默认样式。",
                 settings: [
-                    {id: "fontStyle", name: "Main font style", type: "text", value: "default"},
-                    {id: "fontStyleBold", name: "Font style for bold text", type: "text", value: "default"},
-                    {id: "fontStyleItalic", name: "Font style for italic text", type: "text", value: "default"},
-                    {id: "fontStyleBoldItalic", name: "Font style for bold italic text", type: "text", value: "default"},
+                    {id: "fontStyle", name: "主要字体样式", type: "text", value: "default"},
+                    {id: "fontStyleBold", name: "粗体样式", type: "text", value: "default"},
+                    {id: "fontStyleItalic", name: "斜体样式", type: "text", value: "default"},
+                    {id: "fontStyleBoldItalic", name: "粗斜体样式", type: "text", value: "default"},
                 ]
             },
             {
                 id: "variations",
-                name: "Font Variations",
-                note: "Variable font specific settings, please only touch this if you know what you're doing!",
+                name: "字体变体",
+                note: "可变字体特定设置，请仅在知道自己在做什么时修改！",
                 settings: [
-                    {id: "fontVariation", name: "Main font variant", type: "text", value: ""},
-                    {id: "fontVariationBold", name: "Font variant for bold text", type: "text", value: ""},
-                    {id: "fontVariationItalic", name: "Font variant for italic text", type: "text", value: ""},
-                    {id: "fontVariationBoldItalic", name: "Font variant for bold italic text", type: "text", value: ""},
+                    {id: "fontVariation", name: "主要字体变体", type: "text", value: ""},
+                    {id: "fontVariationBold", name: "粗体变体", type: "text", value: ""},
+                    {id: "fontVariationItalic", name: "斜体变体", type: "text", value: ""},
+                    {id: "fontVariationBoldItalic", name: "粗斜体变体", type: "text", value: ""},
                 ]
             },
             {
                 id: "advanced",
-                name: "Advanced Font & Cell Settings",
-                note: "The settings below have very little validation in Ghostty and can cause your terminal to become unusable. Be careful messing with any of these.",
+                name: "高级字体与单元格设置",
+                note: "下面的设置在 Ghostty 中验证很少，可能导致终端无法使用。修改时请小心。",
                 settings: [
-                    {id: "adjustCellWidth", name: "Cell width adjustment", type: "text", value: ""},
-                    {id: "adjustCellHeight", name: "Cell height adjustment", type: "text", value: ""},
-                    {id: "adjustFontBaseline", name: "Font baseline adjustment", type: "text", value: ""},
-                    {id: "adjustUnderlinePosition", name: "Underline position adjustment", type: "text", value: ""},
-                    {id: "adjustUnderlineThickness", name: "Underline thickness adjustment", type: "text", value: ""},
-                    {id: "adjustStrikethroughPosition", name: "Strikethrough position adjustment", type: "text", value: ""},
-                    {id: "adjustStrikethroughThickness", name: "Strikethrough thickness adjustment", type: "text", value: ""},
-                    {id: "adjustOverlinePosition", name: "Overline position adjustment", type: "text", value: ""},
-                    {id: "adjustOverlineThickness", name: "Overline thickness adjustment", type: "text", value: ""},
-                    {id: "adjustCursorThickness", name: "Cursor thickness adjustment", type: "text", value: ""},
-                    {id: "adjustBoxThickness", name: "Box thickness adjustment", type: "text", value: ""},
-                    {id: "adjustCursorHeight", name: "Cursor height adjustment", type: "text", value: ""},
-                    {id: "graphemeWidthMethod", name: "Grapheme width calculation method", type: "dropdown", value: "unicode", options: ["unicode", "legacy"]},
-                    {id: "freetypeLoadFlags", name: "FreeType load flags", type: "text", value: "hinting,force-autohint,monochrome,autohint"},
+                    {id: "adjustCellWidth", name: "单元格宽度调整", type: "text", value: ""},
+                    {id: "adjustCellHeight", name: "单元格高度调整", type: "text", value: ""},
+                    {id: "adjustFontBaseline", name: "字体基线调整", type: "text", value: ""},
+                    {id: "adjustUnderlinePosition", name: "下划线位置调整", type: "text", value: ""},
+                    {id: "adjustUnderlineThickness", name: "下划线粗细调整", type: "text", value: ""},
+                    {id: "adjustStrikethroughPosition", name: "删除线位置调整", type: "text", value: ""},
+                    {id: "adjustStrikethroughThickness", name: "删除线粗细调整", type: "text", value: ""},
+                    {id: "adjustOverlinePosition", name: "上划线位置调整", type: "text", value: ""},
+                    {id: "adjustOverlineThickness", name: "上划线粗细调整", type: "text", value: ""},
+                    {id: "adjustCursorThickness", name: "光标粗细调整", type: "text", value: ""},
+                    {id: "adjustBoxThickness", name: "边框粗细调整", type: "text", value: ""},
+                    {id: "adjustCursorHeight", name: "光标高度调整", type: "text", value: ""},
+                    {id: "graphemeWidthMethod", name: "字素宽度计算方法", type: "dropdown", value: "unicode", options: ["unicode", "legacy"]},
+                    {id: "freetypeLoadFlags", name: "FreeType 加载标志", type: "text", value: "hinting,force-autohint,monochrome,autohint"},
                 ]
             },
 
@@ -410,7 +410,7 @@ const settings = [
     },
     {
         id: "keybinds",
-        name: "Keybinds",
+        name: "快捷键",
         groups: [
             {
                 id: "keybinds",
@@ -423,19 +423,19 @@ const settings = [
     },
     {
         id: "mouse",
-        name: "Mouse",
+        name: "鼠标",
         groups: [
             {
                 id: "main",
                 name: "",
                 settings: [
-                    {id: "cursorClickToMove", name: "Enable click to move cursor", type: "switch", value: true},
-                    {id: "mouseHideWhileTyping", name: "Hide mouse while typing", type: "switch", value: false},
-                    {id: "mouseShiftCapture", name: "Allow shift with mouse click", type: "dropdown", value: "false", options: ["true", "false", "always", "never"]},
+                    {id: "cursorClickToMove", name: "启用点击移动光标", type: "switch", value: true},
+                    {id: "mouseHideWhileTyping", name: "输入时隐藏鼠标", type: "switch", value: false},
+                    {id: "mouseShiftCapture", name: "允许鼠标点击时按住 Shift", type: "dropdown", value: "false", options: ["true", "false", "always", "never"]},
                     // Technically the values should be min: 0.01, max: 10000, step: 0.01 but those are insane so instead I'll use sane defaults
-                    {id: "mouseScrollMultiplier", name: "Mouse scroll multiplier", type: "number", range: true, value: 3, min: 0.1, max: 10, step: 0.1},
-                    {id: "focusFollowsMouse", name: "Focus splits on mouse move", type: "switch", value: false},
-                    {id: "clickRepeatInterval", name: "Milliseconds between multi-click", note: "A value of 0 means to use the operating system's default timing.", type: "number", value: 0, min: 0, size: 4},
+                    {id: "mouseScrollMultiplier", name: "鼠标滚动倍率", type: "number", range: true, value: 3, min: 0.1, max: 10, step: 0.1},
+                    {id: "focusFollowsMouse", name: "鼠标移动时聚焦分割窗格", type: "switch", value: false},
+                    {id: "clickRepeatInterval", name: "多次点击间隔毫秒数", note: "值为 0 表示使用操作系统的默认时间。", type: "number", value: 0, min: 0, size: 4},
                 ]
             }
         ]
@@ -448,24 +448,24 @@ const settings = [
                 id: "main",
                 name: "",
                 settings: [
-                    {id: "class", name: "WM_CLASS class field", note: "This defaults to `com.mitchellh.ghostty`", type: "text", value: ""},
-                    {id: "x11InstanceName", name: "WM_CLASS instance name", note: "This defaults to `ghostty`", type: "text", value: ""},
-                    {id: "gtkSingleInstance", name: "Single-instance mode", type: "dropdown", value: "desktop", options: [{name: "detect", value: "desktop"}, "true", "false"]},
-                    {id: "gtkCustomCss", name: "Custom css file", type: "text", value: ""},
-                    {id: "gtkOpenglDebug", name: "OpenGL debug", type: "switch", value: false},
-                    {id: "gtkGskRenderer", name: "GSK renderer", type: "text", value: "opengl"},
-                    {id: "appNotifications", name: "App notifications", type: "dropdown", value: "clipboard-copy", options: ["clipboard-copy", "no-clipboard-copy"]}, // TODO: move and expand once ghostty has more support
+                    {id: "class", name: "WM_CLASS 类字段", note: "默认为 `com.mitchellh.ghostty`", type: "text", value: ""},
+                    {id: "x11InstanceName", name: "WM_CLASS 实例名称", note: "默认为 `ghostty`", type: "text", value: ""},
+                    {id: "gtkSingleInstance", name: "单实例模式", type: "dropdown", value: "desktop", options: [{name: "detect", value: "desktop"}, "true", "false"]},
+                    {id: "gtkCustomCss", name: "自定义 CSS 文件", type: "text", value: ""},
+                    {id: "gtkOpenglDebug", name: "OpenGL 调试", type: "switch", value: false},
+                    {id: "gtkGskRenderer", name: "GSK 渲染器", type: "text", value: "opengl"},
+                    {id: "appNotifications", name: "应用通知", type: "dropdown", value: "clipboard-copy", options: ["clipboard-copy", "no-clipboard-copy"]}, // TODO: move and expand once ghostty has more support
                 ]
             },
             {
                 id: "tabs",
-                name: "Titlebar & Tabs",
+                name: "标题栏与标签页",
                 settings: [
-                    {id: "gtkToolbarStyle", name: "Toolbar style", type: "dropdown", value: "raised", options: ["raised", "flat", "raised-border"]},
-                    {id: "gtkTabsLocation", name: "Tab location", type: "dropdown", value: "top", options: ["top", "right", "bottom", "left"]},
-                    {id: "gtkWideTabs", name: "Use wide tabs", note: "Setting this to false will make tabs use the least space necessary.", type: "switch", value: true},
-                    {id: "gtkTitlebar", name: "Show titlebar", type: "switch", value: true},
-                    {id: "gtkTitlebarHideWhenMaximized", name: "Hide titlebar on maximize", type: "switch", value: false},
+                    {id: "gtkToolbarStyle", name: "工具栏样式", type: "dropdown", value: "raised", options: ["raised", "flat", "raised-border"]},
+                    {id: "gtkTabsLocation", name: "标签页位置", type: "dropdown", value: "top", options: ["top", "right", "bottom", "left"]},
+                    {id: "gtkWideTabs", name: "使用宽标签页", note: "设置为 false 将使标签页使用最小必要空间。", type: "switch", value: true},
+                    {id: "gtkTitlebar", name: "显示标题栏", type: "switch", value: true},
+                    {id: "gtkTitlebarHideWhenMaximized", name: "最大化时隐藏标题栏", type: "switch", value: false},
                 ]
             }
         ]
@@ -478,11 +478,11 @@ const settings = [
                 id: "main",
                 name: "",
                 settings: [
-                    {id: "asyncBackend", name: "Async backend", note: "If unsure, leave this set to auto.", type: "dropdown", value: "auto", options: ["auto", "epoll", "io_uring"]},
-                    {id: "linuxCgroup", name: "Use dedicated cgroups", type: "dropdown", value: "single-instance", options: ["single-instance", "always", "never"]},
-                    {id: "linuxCgroupMemoryLimit", name: "Memory limit (bytes)", type: "number", min: 0, max: 4294967295, size: 12},
-                    {id: "linuxCgroupProcessLimit", name: "Max number of processes", type: "number", min: 0, size: 5},
-                    {id: "linuxCgroupHardFail", name: "Hard fail on startup", type: "switch", value: false},
+                    {id: "asyncBackend", name: "异步后端", note: "如果不确定，请保留为 auto。", type: "dropdown", value: "auto", options: ["auto", "epoll", "io_uring"]},
+                    {id: "linuxCgroup", name: "使用专用 cgroups", type: "dropdown", value: "single-instance", options: ["single-instance", "always", "never"]},
+                    {id: "linuxCgroupMemoryLimit", name: "内存限制 (字节)", type: "number", min: 0, max: 4294967295, size: 12},
+                    {id: "linuxCgroupProcessLimit", name: "最大进程数", type: "number", min: 0, size: 5},
+                    {id: "linuxCgroupHardFail", name: "启动时硬失败", type: "switch", value: false},
                 ]
             }
         ]
@@ -495,29 +495,29 @@ const settings = [
                 id: "main",
                 name: "",
                 settings: [
-                    {id: "macosNonNativeFullscreen", name: "Use non-native fullscreen", note: "Tabs currently do not work with non-native fullscreen windows", type: "dropdown", value: "false", options: ["visible-menu", "true", "false", "padded-notch"]},
-                    {id: "macosTitlebarStyle", name: "Titlebar style", type: "dropdown", value: "transparent", options: ["transparent", "native", "tabs", "hidden"]},
-                    {id: "macosTitlebarProxyIcon", name: "Titlebar proxy icon", type: "dropdown", value: "visible", options: ["visible", "hidden"]},
-                    {id: "macosOptionAsAlt", name: "Use option key as alt key", type: "dropdown", value: "", options: ["", "true", "false", "left", "right"]},
-                    {id: "macosWindowShadow", name: "Show the window shadow", type: "switch", value: true},
-                    {id: "macosHidden", name: "Hide from dock and switcher", type: "dropdown", value: "never", options: ["never", "always"]},
-                    {id: "macosAutoSecureInput", name: "Auto secure input", type: "switch", value: true},
-                    {id: "macosSecureInputIndication", name: "Indicate secure input", type: "switch", value: true},
+                    {id: "macosNonNativeFullscreen", name: "使用非原生全屏", note: "标签页目前在非原生全屏窗口中无法工作", type: "dropdown", value: "false", options: ["visible-menu", "true", "false", "padded-notch"]},
+                    {id: "macosTitlebarStyle", name: "标题栏样式", type: "dropdown", value: "transparent", options: ["transparent", "native", "tabs", "hidden"]},
+                    {id: "macosTitlebarProxyIcon", name: "标题栏代理图标", type: "dropdown", value: "visible", options: ["visible", "hidden"]},
+                    {id: "macosOptionAsAlt", name: "将 Option 键用作 Alt 键", type: "dropdown", value: "", options: ["", "true", "false", "left", "right"]},
+                    {id: "macosWindowShadow", name: "显示窗口阴影", type: "switch", value: true},
+                    {id: "macosHidden", name: "从 Dock 和切换器中隐藏", type: "dropdown", value: "never", options: ["never", "always"]},
+                    {id: "macosAutoSecureInput", name: "自动安全输入", type: "switch", value: true},
+                    {id: "macosSecureInputIndication", name: "指示安全输入", type: "switch", value: true},
 
                     // TODO: move these once it is available on non-mac
-                    {id: "autoUpdate", name: "Auto update", note: "Leaving this unset will fall back to your Sparkle preferences.", type: "dropdown", value: "", options: ["", "off", "check", "download"]},
-                    {id: "autoUpdateChannel", name: "Update channel", note: "By default this will adhere to whichever version you downloaded.", type: "dropdown", value: "", options: ["", "stable", "tip"]},
+                    {id: "autoUpdate", name: "自动更新", note: "不设置此项将回退到 Sparkle 首选项。", type: "dropdown", value: "", options: ["", "off", "check", "download"]},
+                    {id: "autoUpdateChannel", name: "更新通道", note: "默认情况下，这将遵循你下载的版本。", type: "dropdown", value: "", options: ["", "stable", "tip"]},
                 ]
             },
             {
                 id: "icon",
-                name: "App Icon",
-                note: "An app icon previewer has been added to the to-do list.",
+                name: "应用图标",
+                note: "待办列表中已添加应用图标预览器。",
                 settings: [
-                    {id: "macosIcon", name: "Icon", note: "Custom style must specify both ghost and screen colors.", type: "dropdown", value: "official", options: ["official", "blueprint", "chalkboard", "microchip", "glass", "holographic", "paper", "retro", "xray", "custom-style"]},
-                    {id: "macosIconFrame", name: "Icon frame", type: "dropdown", value: "aluminum", options: ["aluminum", "beige", "plastic", "chrome"]},
-                    {id: "macosIconGhostColor", name: "Ghost color", type: "color", value: ""},
-                    {id: "macosIconScreenColor", name: "Screen color", type: "color", value: ""},
+                    {id: "macosIcon", name: "图标", note: "自定义样式必须同时指定 ghost 和 screen 颜色。", type: "dropdown", value: "official", options: ["official", "blueprint", "chalkboard", "microchip", "glass", "holographic", "paper", "retro", "xray", "custom-style"]},
+                    {id: "macosIconFrame", name: "图标边框", type: "dropdown", value: "aluminum", options: ["aluminum", "beige", "plastic", "chrome"]},
+                    {id: "macosIconGhostColor", name: "Ghost 颜色", type: "color", value: ""},
+                    {id: "macosIconScreenColor", name: "屏幕颜色", type: "color", value: ""},
                 ]
             }
         ]

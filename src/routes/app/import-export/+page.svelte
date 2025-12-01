@@ -6,8 +6,8 @@
     import {diff, load} from "$lib/stores/config.svelte";
     import parse from "$lib/utils/parse";
 
-    let pasteConfigText = $state("Clipboard");
-    let copyConfigText = $state("Clipboard");
+    let pasteConfigText = $state("剪贴板");
+    let copyConfigText = $state("剪贴板");
 
 
     // TODO: move alert() to real modals
@@ -19,7 +19,7 @@
         catch (parseError) {
             // eslint-disable-next-line no-console
             console.error(parseError);
-            alert("Something went wrong trying to parse your config. Please open an issue on GitHub!");
+            alert("解析配置时出错。请在 GitHub 上提交 Issue！");
             return;
         }
 
@@ -29,16 +29,16 @@
         catch (loadError) {
             // eslint-disable-next-line no-console
             console.error(loadError);
-            alert("Something went wrong trying to load your parsed config. Please open an issue on GitHub!");
+            alert("加载解析后的配置时出错。请在 GitHub 上提交 Issue！");
             return;
         }
     }
 
     function pasteConfig() {
-        if (pasteConfigText === "Pasted!") return;
+        if (pasteConfigText === "已粘贴！") return;
         window.navigator.clipboard.readText().then(text => {
-            pasteConfigText = "Pasted!";
-            setTimeout(() => (pasteConfigText = "Clipboard"), 3000);
+            pasteConfigText = "已粘贴！";
+            setTimeout(() => (pasteConfigText = "剪贴板"), 3000);
             loadConfig(text);
         });
     }
@@ -77,11 +77,11 @@
     }
 
     function copyConfig() {
-        if (copyConfigText === "Copied!") return;
+        if (copyConfigText === "已复制！") return;
         const config = stringifyConfig();
         window.navigator.clipboard.writeText(config).then(() => {
-            copyConfigText = "Copied!";
-            setTimeout(() => (copyConfigText = "Clipboard"), 3000);
+            copyConfigText = "已复制！";
+            setTimeout(() => (copyConfigText = "剪贴板"), 3000);
         });
     }
 
@@ -99,10 +99,10 @@
     }
 </script>
 
-<Page title="Import & Export">
+<Page title="导入 & 导出">
     <Group flex={1}>
         <div class="preview">
-            <div class="row p2"># You can preview the config here</div>
+            <div class="row p2"># 你可以在这里预览配置</div>
             <div class="row">&nbsp;</div>
 
             {#each Object.entries(diff()) as [key, value], i (i)}
@@ -116,18 +116,18 @@
             {/each}
         </div>
         <Separator />
-        <Item name="Import">
+        <Item name="导入">
             <div class="button-group">
-                <button type="button" onclick={pasteConfig} title="Paste">{pasteConfigText}</button>
+                <button type="button" onclick={pasteConfig} title="粘贴">{pasteConfigText}</button>
                 <input id="config-input" type="file" onchange={selectFile} bind:this={filePicker} />
-                <button type="button" onclick={openFilePicker} title="Upload">File...</button>
+                <button type="button" onclick={openFilePicker} title="上传">文件...</button>
             </div>
         </Item>
         <Separator />
-        <Item name="Export">
+        <Item name="导出">
             <div class="button-group">
-                <button type="button" onclick={copyConfig} title="Copy">{copyConfigText}</button>
-                <button type="button" onclick={downloadConfig} title="Download">File...</button>
+                <button type="button" onclick={copyConfig} title="复制">{copyConfigText}</button>
+                <button type="button" onclick={downloadConfig} title="下载">文件...</button>
             </div>
         </Item>
     </Group>

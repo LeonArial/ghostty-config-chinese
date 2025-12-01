@@ -2,7 +2,7 @@
     import {page} from "$app/stores";
     import logo from "$lib/images/ghost.svg";
 
-    const {route = "/", name = "Ghostty Config", subtext = "Community Tool"} = $props();
+    const {route = "/", name = "Ghostty Config", subtext = "社区工具"} = $props();
     const path = $derived($page.url.pathname);
 
     const selected = $derived(path === route || path.startsWith("/app"));

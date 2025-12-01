@@ -17,7 +17,7 @@
 
 
 <!-- eslint-disable-next-line svelte/no-useless-mustaches -->
-<Group title="" note={"Use this page to test your locally installed fonts as they may look in the terminal along with colors and glyphs.\n\nNote: this playground does not set any actual settings."}>
+<Group title="" note={"使用此页面测试你本地安装的字体在终端中的显示效果（包括颜色和字形）。\n\n注意：此预览页面不会修改任何实际设置。"}>
     <div class="preview" style="font-family: {fontFamily}; font-size: {fontSize + "px"}; font-style: {italic ? "italic" : "normal"}; font-weight: {bold ? 700 : 400};">
     <div class="row prompt">
         <span style="color: var(--config-palette-2);">john</span>
@@ -35,13 +35,13 @@
     <div class="row">Icons:     <span style="background-color: var(--config-palette-1); color: var(--config-bg);"> Powerline</span><span style="color: var(--config-palette-1);"></span></div>
     </div>
     <Separator />
-    <Item name="Font family" note="Due to cross-browser limitations, you'll need to manually type in a font-face currently on your system that you want to try out."><Text bind:value={fontFamily} /></Item>
+    <Item name="字体族" note="由于跨浏览器的限制，你需要手动输入系统中已安装的字体名称进行测试。"><Text bind:value={fontFamily} /></Item>
     <Separator />
-    <Item name="Font size"><Number bind:value={fontSize} range={true} min={4} max={60} step={0.5} /></Item>
+    <Item name="字体大小"><Number bind:value={fontSize} range={true} min={4} max={60} step={0.5} /></Item>
     <Separator />
-    <Item name="Bold"><Switch bind:checked={bold} /></Item>
+    <Item name="粗体"><Switch bind:checked={bold} /></Item>
     <Separator />
-    <Item name="Italic"><Switch bind:checked={italic} /></Item>
+    <Item name="斜体"><Switch bind:checked={italic} /></Item>
     <!-- Add ligature options -->
 </Group>
 
